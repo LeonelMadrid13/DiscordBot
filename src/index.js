@@ -8,11 +8,7 @@ const SpamChannelID = '778673993829187604';
 
 const respuestas = [
 	'hola',
-	'hola cachora XD',
-	'pene',
-	'banana',
-	'caca',
-	'culo'
+	'hola cachora XD'
 ];
 
 client.once('ready', () =>{
