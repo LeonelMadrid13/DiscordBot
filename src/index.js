@@ -1,5 +1,5 @@
-const {Client , MessageAttachment} = require('discord.js');
-const client = new Client();
+const Discord = require('discord.js');
+const client = new Discord.Client()
 const {prefix, meaning_of_life} = require('./config.json'); 
 require('dotenv').config();
 
