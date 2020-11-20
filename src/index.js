@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const guildID = '778253660928868382';
 const SpamChannelID = '778673993829187604';
+const BotID = '778667957596848160';
 
 const respuestas = [
 	'hola',
@@ -22,13 +23,17 @@ client.once('ready', () =>{
 client.login(process.env.BOT_TOKEN);
 
 client.on('message', async (msg) => {
+	if (msg.author.id !== BotID){
+		console.log(msg);
+		console.log(msg.author.username);
+	}
 	if (msg.guild.id === guildID && msg.channel.id === SpamChannelID) {
-		if(msg.author.id !== '778667957596848160'){
+		if(msg.author.id !== BotID){
 			if(msg.content.toLowerCase() === 'puta'){
 				await msg.channel.send('tu madre');
 			}
 			if(msg.content.toLowerCase() === `${prefix}user-info`){
-				const userAvatar = new MessageAttachment(msg.author.avatarURL);
+				const userAvatar = msg.author.displayAvatarURL();
 				await msg.reply(`\nyour username: ${msg.author.username}\nYour ID: ${msg.author.id}\n${userAvatar}`);
 			}
 			if(msg.content.toLowerCase() === 'cual es el sentido de la vida?'){
@@ -39,7 +44,7 @@ client.on('message', async (msg) => {
 				msg.channel.send(respuestas[r]);
 			}
 			if (msg.content.toLowerCase() === `${prefix}commands` || msg.content.toLowerCase() === `${prefix}comandos`){
-				await msg.channel.send('visita el canal de #bot-commands para sbaer mis comandos');
+				await msg.channel.send('visita el canal de #bot-commands para saer mis comandos');
 			}
 		}
 	}
