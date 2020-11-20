@@ -9,11 +9,7 @@ const BotID = '778667957596848160';
 
 const respuestas = [
 	'hola',
-	'hola cachora XD',
-	'pene',
-	'banana',
-	'caca',
-	'culo'
+	'hola cachora XD'
 ];
 
 client.once('ready', () =>{
